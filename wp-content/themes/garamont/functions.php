@@ -17,15 +17,50 @@ register_nav_menus( array(
 // Créer des Custom Post Type
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
+
     // Dupliquer le register_post_type pour ajouter d'autres CPT
-    register_post_type('prestation',
+
+    register_post_type('metiers',
         array(
             'labels' => array(
-                'name' => 'prestations',
-                'singular_name' => 'prestation'
+                'name' => _x( 'Métiers', 'metiers' ),
+                'singular_name' => _x( 'Métier', 'metier' ),
+                'add_new' => _x( 'Ajouter', 'metier' ),
+                'add_new_item' => _x( 'Ajouter un métier', 'metier' ),
+                'edit_item' => _x( 'Editer un métier', 'metier' ),
+                'new_item' => _x( 'Nouveau métier', 'metier' ),
+                'view_item' => _x( 'Voir le métier', 'metier' ),
+                'search_items' => _x( 'Rechercher un métier', 'metier' ),
+                'not_found' => _x( 'Aucun produit trouvé', 'metier' ),
+                'not_found_in_trash' => _x( 'Aucun produit dans la corbeille', 'metier' ),
+                'parent_item_colon' => _x( 'Métier parent :', 'metier' ),
+                'menu_name' => _x( 'Métiers', 'metier' ),
             ),
             'public' => true,
-            'supports' => array('thumbnail', 'editor', 'title')
+            'supports' => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+            'taxonomies' => array( 'category')
+        )
+    );
+
+    register_post_type('formations',
+        array(
+            'labels' => array(
+                'name' => _x( 'Formations', 'formations' ),
+                'singular_name' => _x( 'Formation', 'formation' ),
+                'add_new' => _x( 'Ajouter', 'formation' ),
+                'add_new_item' => _x( 'Ajouter une formation', 'formation' ),
+                'edit_item' => _x( 'Editer une formation', 'formation' ),
+                'new_item' => _x( 'Nouveau formation', 'formation' ),
+                'view_item' => _x( 'Voir la formation', 'formation' ),
+                'search_items' => _x( 'Rechercher une formation', 'formation' ),
+                'not_found' => _x( 'Aucune formation trouvé', 'formation' ),
+                'not_found_in_trash' => _x( 'Aucune formation dans la corbeille', 'formation' ),
+                'parent_item_colon' => _x( 'Formation parent :', 'formation' ),
+                'menu_name' => _x( 'Formations', 'formation' ),
+            ),
+            'public' => true,
+            'supports' => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+            'taxonomies' => array( 'category')
         )
     );
 }
