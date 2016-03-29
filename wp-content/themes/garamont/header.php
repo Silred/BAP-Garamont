@@ -28,7 +28,7 @@
 
 <body>
 
-<nav class="navbar  navbar-inverse  navbar-fixed-top  nav-header" role="navigation">
+<nav class="navbar  navbar-inverse  navbar-fixed-top  header-nav" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -59,8 +59,5 @@
     </div>
 </nav>
 
-<div class="top-image"></div>
 
 <div class="container-fluid" id="page">
-
-    <div class="container">
