@@ -9,7 +9,7 @@ $(document).ready(function(){
         $(".work-left li").removeClass("work-menu-left");
         $(this).addClass('work-menu-left');
 
-        var $cibleb = "#mf" + $(this).attr('id');
+        var $cibleb = "#laformation-" + $(this).attr('id');
         $(".work-info").addClass('hide');
         $($cibleb).removeClass('hide');
 
@@ -22,18 +22,17 @@ $(document).ready(function(){
         $(".work-menu-right").removeClass("active-right");
         $(this).addClass('active-right');
 
-        if( $(this).attr('id').indexOf('m') ){
+        if( $(this).attr('id').indexOf('metier') ){
 
-            var $cibleb = "#m" + $(this).attr('id');
-            console.log($cibleb);
+            var $cibleb = "#la" + $(this).attr('id');
             $(".work-info").addClass('hide');
             $($cibleb).removeClass('hide');
         }
 
         else {
-            var $cibleb = "#info" + $(this).attr('id');
+            var $ciblec = "#le" + $(this).attr('id');
             $(".work-info").addClass('hide');
-            $($cibleb).removeClass('hide');
+            $($ciblec).removeClass('hide');
         }
     });
 

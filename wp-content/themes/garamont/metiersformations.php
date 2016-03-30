@@ -2,32 +2,56 @@
 
 <?php get_header(); ?>
 
+<?php
+function slugify($text)
+{
+  // replace non letter or digits by -
+  $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+
+  // transliterate
+  $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+  // remove unwanted characters
+  $text = preg_replace('~[^-\w]+~', '', $text);
+
+  // trim
+  $text = trim($text, '-');
+
+  // remove duplicate -
+  $text = preg_replace('~-+~', '-', $text);
+
+  // lowercase
+  $text = strtolower($text);
+
+  if (empty($text))
+  {
+    return 'n-a';
+  }
+
+  return $text;
+}
+
+?>
+
 <div class="work-contenu  row">
 
        <div class="col-md-2"></div>
        <div class="col-md-6">
 
-            <?php $nb = 0 ?>
 
             <?php $f_query = new WP_Query(array('post_type' => 'formations', 'posts_per_page' => '-1')); ?>
             <?php while ($f_query->have_posts()) : $f_query->the_post(); ?>
 
-                <?php $nb = $nb + 1 ?>
-
-                <div class="work-info  hide" id="mf<?php echo $nb ?>">
+                <div class="work-info  hide" id="laformation-<?php echo slugify(get_the_title()) ?>">
                     <?php the_title(); ?>
                 </div>
 
             <?php endwhile; ?>
 
-            <?php $nb = 0 ?>
-
-            <?php $query = new WP_Query(array('post_type' => 'metiers', 'category_name' => $cat , 'posts_per_page' => '-1')); ?>
+            <?php $query = new WP_Query(array('post_type' => 'metiers', 'posts_per_page' => '-1')); ?>
             <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-                <?php $nb = $nb +1 ?>
-
-                <div class="work-info  hide" id="infom<?php echo $nb ?>">
+                <div class="work-info  hide" id="lemetier-<?php echo slugify(get_the_title()) ?>">
                     <?php the_title(); ?>
                 </div>
 
@@ -40,14 +64,10 @@
 
                     <ul>
 
-                        <?php $nb = 0 ?>
-
                         <?php $f_query = new WP_Query(array('post_type' => 'formations', 'posts_per_page' => '-1')); ?>
                         <?php while ($f_query->have_posts()) : $f_query->the_post(); ?>
 
-                            <?php $nb = $nb + 1 ?>
-
-                            <li class="" id="<?php echo $nb ?>">
+                            <li class="" id="<?php echo slugify(get_the_title()) ?>">
                                 <?php the_title(); ?>
                             </li>
 
@@ -60,33 +80,25 @@
 
                 <div class="col-md-6  work-liste">
 
-                    <?php $nb = 0 ?>
-
                     <?php $my_query = new WP_Query(array('post_type' => 'formations', 'posts_per_page' => '-1')); ?>
                     <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-
-                        <?php $nb = $nb + 1 ?>
 
                         <?php $cat = get_field('category'); ?>
 
                         <div class="row">
 
-                            <div class="col-md-12  work-menu-right  hide" id="menu-<?php echo $nb ?>">
+                            <div class="col-md-12  work-menu-right  hide" id="menu-<?php echo slugify(get_the_title()) ?>">
 
                                 <ul>
 
-                                    <li id="f<?php echo $nb ?>">
+                                    <li id="formation-<?php echo slugify(get_the_title()) ?>">
                                         La formation
                                     </li>
-
-                                    <?php $int = 0 ?>
 
                                     <?php $query = new WP_Query(array('post_type' => 'metiers', 'category_name' => $cat , 'posts_per_page' => '-1')); ?>
                                     <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-                                        <?php $int = $int + 1 ?>
-
-                                        <li id="m<?php echo $int ?>">
+                                        <li id="metier-<?php echo slugify(get_the_title()) ?>">
                                             <?php the_title(); ?>
                                         </li>
 
