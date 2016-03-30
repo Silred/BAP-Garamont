@@ -26,6 +26,20 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	vertical-align: baseline;
 }
 
+body{
+	overflow-x: hidden;
+}
+
+/*
+Général
+Style
+*/
+
+.hide{
+	display: none;
+}
+
+
 
 /*
 HEADER
@@ -57,6 +71,42 @@ Préfix: work-
 	margin-top: 100px;
 }
 
+.work-contenu ul, li{
+	list-style-type: none;
+}
+
+.work-contenu li{
+	width: 100%;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.work-left{
+	background-color: #00a0d2;
+	color: #ffffff;
+}
+
+.work-liste{
+	padding: 0!important;
+}
+
+.work-menu-left{
+	position: relative;
+	background: #88b7d5;
+}
+
+.work-menu-left:after{
+	left: 100%;
+	top: 50%;
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #88b7d5;
+	border-width: 30px;
+	margin-top: -30px;
+}
 
 /*
 Création / Galerie
