@@ -1,4 +1,4 @@
-<?php /* Template Name: Métiers et Formations */ ?>
+<?php /* Template Name: Formations et Métiers  */ ?>
 
 <?php get_header(); ?>
 
@@ -27,13 +27,11 @@ function slugify($text)
   {
     return 'n-a';
   }
-
   return $text;
 }
-
 ?>
 
-<div class="work-contenu  row">
+<div class="fm-contenu  row">
 
        <div class="col-md-2"></div>
        <div class="col-md-6">
@@ -42,8 +40,8 @@ function slugify($text)
             <?php $f_query = new WP_Query(array('post_type' => 'formations', 'posts_per_page' => '-1')); ?>
             <?php while ($f_query->have_posts()) : $f_query->the_post(); ?>
 
-                <div class="work-info  hide" id="laformation-<?php echo slugify(get_the_title()) ?>">
-                    <?php the_title(); ?>
+                <div class="fm-info  hide" id="laformation-<?php echo slugify(get_the_title()) ?>">
+                    <h2><?php the_title(); ?></h2>
                 </div>
 
             <?php endwhile; ?>
@@ -51,8 +49,8 @@ function slugify($text)
             <?php $query = new WP_Query(array('post_type' => 'metiers', 'posts_per_page' => '-1')); ?>
             <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-                <div class="work-info  hide" id="lemetier-<?php echo slugify(get_the_title()) ?>">
-                    <?php the_title(); ?>
+                <div class="fm-info  hide" id="lemetier-<?php echo slugify(get_the_title()) ?>">
+                    <h2><?php the_title(); ?></h2>
                 </div>
 
             <?php endwhile; ?>
@@ -60,16 +58,20 @@ function slugify($text)
         </div>
         <div class="col-md-4">
             <div class="row">
-                <div class="col-md-6  work-left  work-liste">
+                <div class="col-md-6  fm-left  fm-liste">
 
                     <ul>
 
                         <?php $f_query = new WP_Query(array('post_type' => 'formations', 'posts_per_page' => '-1')); ?>
                         <?php while ($f_query->have_posts()) : $f_query->the_post(); ?>
 
-                            <li class="" id="<?php echo slugify(get_the_title()) ?>">
-                                <?php the_title(); ?>
-                            </li>
+                            <div class="fm-menu-left">
+
+                                <li id="<?php echo slugify(get_the_title()) ?>">
+                                    <?php the_title(); ?>
+                                </li>
+
+                            </div>
 
                         <?php endwhile; ?>
 
@@ -78,16 +80,16 @@ function slugify($text)
 
                 </div>
 
-                <div class="col-md-6  work-liste">
+                <div class="col-md-6  fm-liste">
 
                     <?php $my_query = new WP_Query(array('post_type' => 'formations', 'posts_per_page' => '-1')); ?>
                     <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 
-                        <?php $cat = get_field('category'); ?>
+                        <?php $cat =  slugify(get_the_title()); ?>
 
                         <div class="row">
 
-                            <div class="col-md-12  work-menu-right  hide" id="menu-<?php echo slugify(get_the_title()) ?>">
+                            <div class="col-md-12  fm-menu-right  hide" id="menu-<?php echo slugify(get_the_title()) ?>">
 
                                 <ul>
 
