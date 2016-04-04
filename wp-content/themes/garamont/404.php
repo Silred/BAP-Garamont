@@ -20,7 +20,7 @@
                 <?php } else { ?>
                     <?php if ($category_menu <> '<li>No categories</li>') echo($category_menu); ?>
                 <?php } ?>
-                <li><a title="Tous les podcasts WordPress Channel" href="https://wpchannel.com/tag/podcasts" rel="tag">Podcasts</a></li>
+                <li><a title="Lycée GARAMONT" href="https://Lycéegaramont.com/" rel="tag"></a></li>
             </ul>
             <div>
                 <div id="search">
@@ -46,7 +46,7 @@
                     <?php query_posts("orderby=comment_count&showposts=10&caller_get_posts=1");
                     while (have_posts()) : the_post(); ?>
                         <li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','eVid'), get_the_title()) ?>">
-                                <?php the_title() ?>
+                             <?php the_title() ?>
                             </a></li>
                     <?php endwhile; wp_reset_query(); ?>
                 </ul>
@@ -57,6 +57,7 @@
         </div>
     </div>
     </div>
+
     </body>
     </html>
 

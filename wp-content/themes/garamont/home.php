@@ -11,4 +11,7 @@
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
 
+/** Shortcode pour un slider ou une galerie */
+
+
 <?php get_footer(); ?>
