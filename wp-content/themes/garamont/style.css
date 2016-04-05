@@ -30,6 +30,11 @@ body{
 	overflow-x: hidden;
 }
 
+#page {
+	margin-top: 90px;
+}
+
+
 /*
 Général
 Style
@@ -114,6 +119,13 @@ Création / Galerie
 Style
 Préfix: crea-
 */
+
+#crea-titre_page {
+    font-size: 2em;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-family: sans-serif;	
+}
 
 
 /*

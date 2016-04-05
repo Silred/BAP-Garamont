@@ -63,4 +63,48 @@ function create_post_type() {
             'taxonomies' => array( 'category')
         )
     );
+	
+    register_post_type('galerie',
+        array(
+            'labels' => array(
+                'name' => _x( 'Galerie', 'Galerie' ),
+                'singular_name' => _x( 'Galerie', 'Galerie' ),
+                'add_new' => _x( 'Ajouter', 'galerie' ),
+                'add_new_item' => _x( 'Ajouter une galerie', 'galerie' ),
+                'edit_item' => _x( 'Editer une galerie', 'galerie' ),
+                'new_item' => _x( 'Nouvelle galerie', 'galerie' ),
+                'view_item' => _x( 'Voir la galerie', 'galerie' ),
+                'search_items' => _x( 'Rechercher une galerie', 'galerie' ),
+                'not_found' => _x( 'Aucune galerie trouvé', 'galerie' ),
+                'not_found_in_trash' => _x( 'Aucune galerie dans la corbeille', 'galerie' ),
+                'parent_item_colon' => _x( 'Galerie parent :', 'galerie' ),
+                'menu_name' => _x( 'Galerie', 'Galerie' ),
+            ),
+            'public' => true,
+            'supports' => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+            'taxonomies' => array( 'category')
+        )
+    );	
+	
+    register_post_type('creation',
+        array(
+            'labels' => array(
+                'name' => _x( 'Création', 'creation' ),
+                'singular_name' => _x( 'Création', 'creation' ),
+                'add_new' => _x( 'Ajouter', 'creation' ),
+                'add_new_item' => _x( 'Ajouter une création', 'creation' ),
+                'edit_item' => _x( 'Editer une création', 'creation' ),
+                'new_item' => _x( 'Nouvelle création', 'creation' ),
+                'view_item' => _x( 'Voir la creation', 'creation' ),
+                'search_items' => _x( 'Rechercher une création', 'creation' ),
+                'not_found' => _x( 'Aucune création trouvé', 'creation' ),
+                'not_found_in_trash' => _x( 'Aucune creation dans la corbeille', 'creation' ),
+                'parent_item_colon' => _x( 'creation parent :', 'creation' ),
+                'menu_name' => _x( 'Création', 'creation' ),
+            ),
+            'public' => true,
+            'supports' => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+            'taxonomies' => array( 'category')
+        )
+    );	
 }
