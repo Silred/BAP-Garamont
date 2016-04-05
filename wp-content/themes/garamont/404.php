@@ -33,15 +33,21 @@
 
     <div id="container">
 
-        <div id="left-div" style="width:950px;min-height:0;">
 
-            <div>
 
-                <h1>Erreur 404</h1>
-                <div>Oups, ceci est une erreur dite 404 ! En termes simples, la page ne peut être trouvée... Je vous invite dès à présent à utiliser les outils de recherche et / ou de navigation pour parvenir au contenu souhaité.</div>
+          <div class="block404">
 
-                <img src="https://wpchannel.com/wp-content/themes/WordPressChannel/images/bsod.jpg" alt="Blue Screen of the Death - PC" />
-                <h2>Top 10 des articles sur WordPress Channel</h2>
+            <div class="erreur404">
+
+                <h1 class="h404">Erreur 404</h1>
+                <div style="color: #efefef;font-size: 110%;">Oups, ceci est une erreur dite 404 ! En termes simples, la page ne peut être trouvée... Je vous invite dès à présent à utiliser les outils de recherche et / ou de navigation pour parvenir au contenu souhaité.</div>
+
+            </div>
+
+          <div class="erreursuite">
+
+
+                <h2>Aller sur nos autre page :</h2>
                 <ul>
                     <?php query_posts("orderby=comment_count&showposts=10&caller_get_posts=1");
                     while (have_posts()) : the_post(); ?>
@@ -51,10 +57,10 @@
                     <?php endwhile; wp_reset_query(); ?>
                 </ul>
 
-                <h2>Retour à la page d'accueil</h2>
+                <h2> ou Retourner à la page d'accueil</h2>
                 <p>Cliquez simplement sur le bandeau en haut de la page.</p>
+             </div>
             </div>
-        </div>
     </div>
     </div>
 

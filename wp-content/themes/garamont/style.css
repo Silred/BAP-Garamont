@@ -30,11 +30,6 @@ body{
 	overflow-x: hidden;
 }
 
-#page {
-	margin-top: 90px;
-}
-
-
 /*
 Général
 Style
@@ -44,7 +39,27 @@ Style
 	display: none;
 }
 
+.block404{
+	display: block;
+	margin-left: 30%;
+	margin-right: 30%;
+	padding-top: 7%;
+	text-align: center;
 
+}
+.h404{
+	font-size: 600%;
+	color: #aa0005;
+}
+
+.erreur404{
+	text-align: center;
+	padding: 7%;
+	background: rgba(0, 0, 0, 0.69);
+}
+.erreursuite{
+	padding: 10%;
+}
 
 /*
 HEADER
@@ -119,13 +134,6 @@ Création / Galerie
 Style
 Préfix: crea-
 */
-
-#crea-titre_page {
-    font-size: 2em;
-    font-weight: 100;
-    text-transform: uppercase;
-    font-family: sans-serif;	
-}
 
 
 /*
