@@ -33,29 +33,7 @@ function slugify($text)
 
 <div class="fm-contenu  row">
 
-       <div class="col-md-2"></div>
-       <div class="col-md-6">
 
-
-            <?php $f_query = new WP_Query(array('post_type' => 'formations', 'posts_per_page' => '-1')); ?>
-            <?php while ($f_query->have_posts()) : $f_query->the_post(); ?>
-
-                <div class="fm-info  hide" id="laformation-<?php echo slugify(get_the_title()) ?>">
-                    <h2><?php the_title(); ?></h2>
-                </div>
-
-            <?php endwhile; ?>
-
-            <?php $query = new WP_Query(array('post_type' => 'metiers', 'posts_per_page' => '-1')); ?>
-            <?php while ($query->have_posts()) : $query->the_post(); ?>
-
-                <div class="fm-info  hide" id="lemetier-<?php echo slugify(get_the_title()) ?>">
-                    <h2><?php the_title(); ?></h2>
-                </div>
-
-            <?php endwhile; ?>
-
-        </div>
         <div class="col-md-4">
             <div class="row">
                 <div class="col-md-6  fm-left  fm-liste">
@@ -80,7 +58,7 @@ function slugify($text)
 
                 </div>
 
-                <div class="col-md-6  fm-liste">
+                <div class="col-md-6  fm-liste  fm-right">
 
                     <?php $my_query = new WP_Query(array('post_type' => 'formations', 'posts_per_page' => '-1')); ?>
                     <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
@@ -114,6 +92,32 @@ function slugify($text)
                 </div>
             </div>
         </div>
+
+        <div class="col-md-8">
+
+
+            <?php $f_query = new WP_Query(array('post_type' => 'formations', 'posts_per_page' => '-1')); ?>
+            <?php while ($f_query->have_posts()) : $f_query->the_post(); ?>
+
+                <div class="fm-info  hide" id="laformation-<?php echo slugify(get_the_title()) ?>">
+                    <h2><?php the_title(); ?></h2>
+                    <p><?php the_content(); ?></p>
+                </div>
+
+            <?php endwhile; ?>
+
+            <?php $query = new WP_Query(array('post_type' => 'metiers', 'posts_per_page' => '-1')); ?>
+            <?php while ($query->have_posts()) : $query->the_post(); ?>
+
+                <div class="fm-info  hide" id="lemetier-<?php echo slugify(get_the_title()) ?>">
+                    <h2><?php the_title(); ?></h2>
+                    <p><?php the_content(); ?></p>
+                </div>
+
+            <?php endwhile; ?>
+
+        </div>
+
     </div>
 </div>
 

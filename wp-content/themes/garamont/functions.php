@@ -12,6 +12,9 @@ register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'Menu' ),
 ) );
 
+register_nav_menus( array(
+    'secondary' => __( 'Secondary Menu', 'Menu2' ),
+) );
 
 
 // Créer des Custom Post Type

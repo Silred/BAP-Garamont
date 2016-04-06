@@ -30,6 +30,7 @@ body{
 	overflow-x: hidden;
 }
 
+
 /*
 Général
 Style
@@ -70,7 +71,8 @@ Préfix: header-
 
 
 .header-nav{
-
+	height: 8vh;
+	margin-bottom: 0;
 }
 
 
@@ -87,12 +89,15 @@ Style
 Préfix: fm-
 */
 
+
+
 .fm-contenu{
-	margin-top: 100px;
+	height: 92vh;
 }
 
 .fm-contenu ul, li{
 	list-style-type: none;
+	cursor: pointer;
 }
 
 .fm-contenu li{
@@ -103,17 +108,23 @@ Préfix: fm-
 
 .fm-left{
 	background-color: #00a0d2;
-	color: #ffffff;
+}
+
+.fm-right{
+	background-color: #00b9eb;
 }
 
 .fm-liste{
 	padding: 0!important;
+	height: 92vh;
+	color: #ffffff;
 }
 
 .fm-menu-left{
 	position: relative;
-	background: #88b7d5;
 }
+
+
 
 .fm-menu-left:after{
 	left: 100%;
@@ -127,6 +138,21 @@ Préfix: fm-
 	border-width: 30px;
 	margin-top: -30px;
 	z-index: 1;
+}
+
+.fm-menu-total{
+	background: #000000;
+	height: 92vh;
+}
+
+
+.fm-active-right{
+	font-weight: bolder;
+	font-size: larger;
+}
+
+.fm-active-left{
+	background-color: #00b9eb;
 }
 
 /*
