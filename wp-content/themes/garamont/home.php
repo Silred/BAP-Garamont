@@ -1,50 +1,127 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: debray
- * Date: 03/03/2016
- * Time: 00:40
- */
-
-?>
+<?php /* Template Name: Home  */ ?>
 
 <?php get_header(); ?>
-<?php get_sidebar(); ?>
+<div class="home-page">
 
-<!-- Mettre une sidebar boostrap ou pas ->
+<?php $query = new WP_Query(array('page_id' => 2, 'posts_per_page' => '1')); ?>
+<?php while ($query->have_posts()) : $query->the_post(); ?>
 
-<!--    <nav class="navbar navbar-default" role="navigation">
+    <div class="home-top"><?php the_post_thumbnail('full', array( 'class' => 'home-img-top' ))?></div>
 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
+    <div class="row  home-section-titre">
+        <h2><?php the_field('titre_section_1') ?></h2>
+    </div>
+
+<?php endwhile; ?>
+
+    <div class="my-slider">
+        <ul>
+
+            <?php $query_3 = new WP_Query(array('post_type' => 'post', 'posts_per_page' => '5', 'orderby' => 'date')); ?>
+            <?php while ($query_3->have_posts()) : $query_3->the_post(); ?>
+
+                <li>
+
+                    <h3><?php the_title() ?></h3>
+
+                    <div class="home-article-content">
+
+                        <?php the_content() ?>
+
+                    </div>
+
                 </li>
-            </ul>
+
+            <?php endwhile; ?>
+
+
+        </ul>
+    </div>
+
+
+    <?php $query = new WP_Query(array('page_id' => 2, 'posts_per_page' => '1')); ?>
+    <?php while ($query->have_posts()) : $query->the_post(); ?>
+
+        <div class="row  home-section-titre">
+            <h2><?php the_field('titre_section_2') ?></h2>
         </div>
-    </nav>-->
 
-<h1>Lycée Garamont</h1>
-<h2>Description du Lycée</h2>
+    <?php endwhile; ?>
 
-    /** Shortcode pour un slider ou une galerie */
 
+    <div class="row">
+
+        <?php $query_2 = new WP_Query(array('post_type' => 'galerie', 'posts_per_page' => '4', 'orderby' => 'rand')); ?>
+        <?php while ($query_2->have_posts()) : $query_2->the_post(); ?>
+
+
+
+                <a href="<?php the_permalink()?>">
+                    <div class="col-md-3  no-padding">
+
+                        <?php the_post_thumbnail('full', array( 'class' => 'home-img-crea' )) ?>
+
+                    </div>
+                </a>
+
+
+
+        <?php endwhile; ?>
+
+    </div>
+
+
+    <?php $query = new WP_Query(array('page_id' => 2, 'posts_per_page' => '1')); ?>
+    <?php while ($query->have_posts()) : $query->the_post(); ?>
+
+        <div class="row  home-section-titre">
+            <h2><?php the_field('titre_section_3') ?></h2>
+        </div>
+
+        <div class="container">
+
+            <div class="home-content"><?php echo the_content(); ?></div>
+
+        </div>
+
+
+        <div class="row home-break">
+
+
+
+        </div>
+
+
+        <div class="row">
+
+            <?php for($i=1; $i<5; $i++){?>
+
+                <?php $title = 'titre_'.$i; ?>
+                <?php $content = 'descritpion_'.$i; ?>
+
+                <div class="col-md-3">
+
+                    <h3><?php the_field($title) ?></h3>
+
+                    <?php the_field($content) ?>
+
+                </div>
+
+            <?php } ?>
+
+        </div>
+
+    <?php endwhile; ?>
+
+
+</div>
+
+
+    <script src="<?php bloginfo('template_directory'); ?>/js/unslider.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+            $('.my-slider').unslider();
+        });
+    </script>
 
 <?php get_footer(); ?>

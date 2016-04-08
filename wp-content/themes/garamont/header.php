@@ -20,6 +20,7 @@
     <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" type="text/css"/>
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/unslider.css" type="text/css"/>
     <script src="<?php bloginfo('template_directory'); ?>/js/jquery-1.12.1.min.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/js/bootstrap.min.js"></script>
 </head>
@@ -28,7 +29,7 @@
 
 <body>
 
-<nav class="navbar  navbar-inverse  navbar-fixed-top  header-nav" role="navigation">
+<nav class="navbar  navbar-inverse  navbar-static-top  header-nav" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">

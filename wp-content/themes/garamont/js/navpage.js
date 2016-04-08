@@ -1,10 +1,5 @@
 $(document).ready(function(){
 
-    $('.navbar-fixed-top').addClass('navbar-static-top');
-
-    $('.navbar-static-top').removeClass('navbar-fixed-top');
-
-
     $('.fm-left li').click(function() {
 
         $(".fm-menu-right").addClass("hide");

@@ -36,6 +36,16 @@ Général
 Style
 */
 
+.footer{
+	font-size: 16px;
+	height: 4vh;
+	text-align: center;
+}
+
+.no-padding{
+	padding: 0;
+}
+
 .hide{
 	display: none;
 }
@@ -50,7 +60,7 @@ Style
 }
 .h404{
 	font-size: 600%;
-	color: #aa0005;
+	color: #ffffff;
 }
 
 .erreur404{
@@ -82,6 +92,65 @@ Style
 Préfix: home-
 */
 
+.home-content{
+	font-size: 20px;
+}
+
+.home-img-top{
+	height: 92vh;
+	width: 100vw;
+}
+
+.home-page h2{
+	text-align: center;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.home-top{
+	height: 92vh;
+	width: 100vw;
+}
+
+.home-img-crea{
+	width: 100%;
+	height: auto;
+	margin-bottom: 50px;
+	z-index: 5;
+	position: relative;
+	filter: grayscale(0.8);
+	-webkit-filter: grayscale(0.8);
+	-moz-filter: grayscale(0.8);
+	-o-filter: grayscale(0.8);
+	-ms-filter: grayscale(0.8);
+}
+
+.home-img-crea:hover{
+	-ms-transform: scale(1.15);
+	-webkit-transform: scale(1.15);
+	transform: scale(1.15);
+	z-index: 999;
+	-webkit-box-shadow: 0px 0px 25px 2px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 25px 2px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 25px 2px rgba(0,0,0,0.75);
+	filter: grayscale(0);
+	-webkit-filter: grayscale(0);
+	-moz-filter: grayscale(0);
+	-o-filter: grayscale(0);
+	-ms-filter: grayscale(0);
+	filter: saturate(1.2);
+	-webkit-filter: saturate(1.2);
+	-moz-filter: saturate(1.2);
+	-o-filter: saturate(1.2);
+	-ms-filter: saturate(1.2);
+}
+
+.home-section-titre{
+	padding: 25px;
+	margin: 50px;
+}
+
+
 
 /*
 Formations et Métiers
@@ -92,7 +161,7 @@ Préfix: fm-
 
 
 .fm-contenu{
-	height: 92vh;
+	height: 88vh;
 }
 
 .fm-contenu ul, li{
@@ -116,7 +185,7 @@ Préfix: fm-
 
 .fm-liste{
 	padding: 0!important;
-	height: 92vh;
+	height: 88vh;
 	color: #ffffff;
 }
 
@@ -142,7 +211,7 @@ Préfix: fm-
 
 .fm-menu-total{
 	background: #000000;
-	height: 92vh;
+	height: 88vh;
 }
 
 

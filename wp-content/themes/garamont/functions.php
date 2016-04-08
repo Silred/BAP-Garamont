@@ -109,5 +109,7 @@ function create_post_type() {
             'supports' => array( 'title', 'editor', 'thumbnail', 'revisions' ),
             'taxonomies' => array( 'category')
         )
-    );	
+    );
+
+    flush_rewrite_rules();
 }
