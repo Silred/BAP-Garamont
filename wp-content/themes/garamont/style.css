@@ -230,6 +230,33 @@ Style
 Préfix: crea-
 */
 
+.crea-contenu {
+	margin-top: 10px;
+}
+
+#crea-titre_page {
+    text-align: center;
+    font-size: 2em;
+}
+
+img.attachment-crea-album-grid {
+    width: auto!important;
+    min-width: 500px;
+    min-height: 400px;
+    max-height: 400px;
+}
+
+.crea-album-grid {
+	text-align:center;
+}
+
+.carousel-control.left,.carousel-control.right {
+    background: none!important;
+	color: black;
+    position: absolute;
+    top: 40%;
+    font-size: 3em;	
+}
 
 /*
 Page standard
