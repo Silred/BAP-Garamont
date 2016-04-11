@@ -20,6 +20,7 @@
     <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" type="text/css"/>
+    <link rel="stylesheet" src="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/unslider.css" type="text/css"/>
     <script src="<?php bloginfo('template_directory'); ?>/js/jquery-1.12.1.min.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/js/bootstrap.min.js"></script>

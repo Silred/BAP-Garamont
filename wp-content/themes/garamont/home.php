@@ -14,29 +14,41 @@
 
 <?php endwhile; ?>
 
-    <div class="my-slider">
-        <ul>
+
+
+
+
+
+    <div class="slider">
+        <div class="arrows">
+            <a class="previous">Previous</a>
+            <a class="next">Next</a>
+        </div>
+        <div class="slides">
+
+            <?php $a = 1 ?>
 
             <?php $query_3 = new WP_Query(array('post_type' => 'post', 'posts_per_page' => '5', 'orderby' => 'date')); ?>
             <?php while ($query_3->have_posts()) : $query_3->the_post(); ?>
 
-                <li>
+                <div class="slide <?php if($a == 1){ echo 'active';  }?>" data-icon="&#xf0ac;">
 
                     <h3><?php the_title() ?></h3>
 
-                    <div class="home-article-content">
+                    <?php the_content() ?>
 
-                        <?php the_content() ?>
+                </div>
 
-                    </div>
-
-                </li>
+                <?php $a = $a + 1 ; ?>
 
             <?php endwhile; ?>
 
-
-        </ul>
+        </div>
+        <div class="bullets"></div>
     </div>
+
+
+
 
 
     <?php $query = new WP_Query(array('page_id' => 2, 'posts_per_page' => '1')); ?>
@@ -87,10 +99,10 @@
 
         <div class="row home-break">
 
-
+            <img src="<?php the_field('fond') ?>" class="img-responsive">
 
         </div>
-
+        
 
         <div class="row">
 
@@ -118,10 +130,6 @@
 
 
     <script src="<?php bloginfo('template_directory'); ?>/js/unslider.js"></script>
-    <script>
-        jQuery(document).ready(function($) {
-            $('.my-slider').unslider();
-        });
-    </script>
+
 
 <?php get_footer(); ?>

@@ -93,7 +93,7 @@ Préfix: home-
 */
 
 .home-content{
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .home-img-top{
@@ -150,6 +150,14 @@ Préfix: home-
 	margin: 50px;
 }
 
+.home-break{
+	height: 300px;
+	overflow: hidden;
+}
+
+.home-break img{
+	width: 100%;
+}
 
 
 /*
