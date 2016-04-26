@@ -89,6 +89,28 @@ function create_post_type() {
         )
     );	
 	
+    register_post_type('citation',
+        array(
+            'labels' => array(
+                'name' => _x( 'Citation', 'citation' ),
+                'singular_name' => _x( 'Citation', 'citation' ),
+                'add_new' => _x( 'Ajouter', 'citation' ),
+                'add_new_item' => _x( 'Ajouter une citation', 'citation' ),
+                'edit_item' => _x( 'Editer une citation', 'citation' ),
+                'new_item' => _x( 'Nouvelle citation', 'citation' ),
+                'view_item' => _x( 'Voir la citation', 'citation' ),
+                'search_items' => _x( 'Rechercher une citation', 'citation' ),
+                'not_found' => _x( 'Aucune citation trouvé', 'citation' ),
+                'not_found_in_trash' => _x( 'Aucune citation dans la corbeille', 'citation' ),
+                'parent_item_colon' => _x( 'citation parent :', 'citation' ),
+                'menu_name' => _x( 'Citation', 'citation' ),
+            ),
+            'public' => true,
+            'supports' => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+            'taxonomies' => array( 'category')
+        )
+    );
+	
     register_post_type('creation',
         array(
             'labels' => array(
@@ -109,7 +131,7 @@ function create_post_type() {
             'supports' => array( 'title', 'editor', 'thumbnail', 'revisions' ),
             'taxonomies' => array( 'category')
         )
-    );
+    );	
 
     flush_rewrite_rules();
 }
