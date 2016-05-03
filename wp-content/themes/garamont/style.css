@@ -345,10 +345,28 @@ img.attachment-crea-album-grid {
 
 .carousel-control.left,.carousel-control.right {
     background: none!important;
+	border: none;
 	color: black;
     position: absolute;
     top: 40%;
     font-size: 3em;	
+}
+
+.carousel-control.left:hover,.carousel-control.right:hover {
+	border:none;
+}
+
+.slide {
+    padding: 0!important;
+    width: 100%!important;
+    position: relative!important;
+    opacity: 1!important; 
+	transform: initial!important;
+}
+
+#crea-carousel {
+    height: 400px;
+    overflow: hidden;
 }
 
 /*

@@ -35,26 +35,24 @@
 					<p><?php the_field($content) ?></p>
 					
 			
-				<?php if ($i == 5) {?>
-					<?php $args = array( 'numberposts' => '1' , 'post_type' => 'post', );
-						$recent_posts = wp_get_recent_posts( $args );
-						foreach( $recent_posts as $recent ){
-							the_post();
-							the_title();
-							$id_post = get_the_ID ();
-							$content_art = get_the_content();
-							echo '<p>'.substr($content_art, 0, 200).'</p>';
-							?>
-							<a href="<?php echo esc_url( get_permalink($id_post) ); ?>">Voir la suite</a>
-						<?php }		
-					?>
-					<?php $query->reset_postdata();?>
-				<?php }?>	
+					<?php if ($i == 5) {?>
+						<?php $args = array( 'numberposts' => '1' , 'post_type' => 'post', );
+							$recent_posts = wp_get_recent_posts( $args );
+							foreach( $recent_posts as $recent ){
+								the_post();
+								the_title();
+								$id_post = get_the_ID ();
+								$content_art = get_the_content();
+								echo '<p>'.substr($content_art, 0, 200).'</p>';
+								?>
+								<a href="<?php echo esc_url( get_permalink($id_post) ); ?>">Voir la suite</a>
+							<?php }		
+						?>
+						<?php $query->reset_postdata();?>
+					<?php }?>	
 					
                 </div>
 
-
-			
 			
 				<?php if ($i == 4) {?>
 					<?php $query2 = new WP_Query('post_type=creation'); ?>

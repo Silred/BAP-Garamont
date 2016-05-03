@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="row  footer">
+<div class="row footer">
     Copyright Lycée Claude Garamont @ 2016 All rights reserved
 </div>
 
