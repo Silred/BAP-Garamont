@@ -18,6 +18,7 @@
 
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>"/>
     <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
+    <meta name="viewport" content="width=device-width, user-scalable=false;">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" type="text/css"/>
     <link rel="stylesheet" src="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" type="text/css">
@@ -40,24 +41,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                <?php bloginfo('name'); ?>
-            </a>
         </div>
-
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <?php
         wp_nav_menu( array(
                 'menu'              => 'primary',
                 'theme_location'    => 'primary',
                 'depth'             => 2,
-                'container'         => 'div',
-                'container_class'   => 'collapse navbar-collapse',
-                'container_id'      => 'bs-example-navbar-collapse-1',
+                'container'         => false,
                 'menu_class'        => 'nav navbar-nav',
                 'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
                 'walker'            => new wp_bootstrap_navwalker())
         );
         ?>
+        </div>
     </div>
 </nav>
 
