@@ -648,3 +648,35 @@ Préfix: page-
 	}
 
 }
+
+/*
+Page single-témoignage
+Style
+Préfix: temoignage-
+*/
+
+.temoignage-contenu {
+	text-align: center;
+	padding: 20px 0;
+}
+
+.temoignage-contenu a {
+    border: 1px solid black;
+    padding: 10px 20px;
+    margin: 11px;
+}
+
+.temoignage-contenu img {
+	margin: 5px;
+}
+
+#temoignage-titre_page {
+    text-align: center;
+    font-size: 2em;
+}
+
+.temoignage-content {
+    width: 80%;
+    margin: 30px auto;
+    text-align: justify;
+}
