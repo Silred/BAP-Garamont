@@ -65,7 +65,7 @@
 
 							echo '<p>'.substr($recent["post_content"], 0, 350). ' ...</p>';
 							?>
-							<a href="<?php echo esc_url( get_permalink($recent["ID"]) ); ?>">Voir le reste de l'actualité.</a>
+							<a href="<?php echo esc_url( get_permalink(159)); ?>">Voir le reste de l'actualité.</a>
 						<?php }
 					?>
 				<?php }?>

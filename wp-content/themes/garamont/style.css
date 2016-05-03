@@ -29,6 +29,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 body{
 	overflow-x: hidden;
 	background: url("img/fond.jpg");
+	background-size: cover;
 }
 
 
@@ -36,6 +37,10 @@ body{
 Général
 Style
 */
+
+#page{
+	margin-top: 100px;
+}
 
 .footer{
 	font-size: 16px;
@@ -89,6 +94,12 @@ HEADER
 Style
 Préfix: header-
 */
+
+.navbar{
+	position: fixed!important;
+		width: 100%;
+	margin-top: -100px;
+}
 
 .dropdown:hover .dropdown-menu {
 	display: block;
@@ -520,6 +531,28 @@ Page standard
 Style
 Préfix: page-
 */
+
+.std-title h1{
+	font-size: 3.6em;
+	font-weight: 700;
+	text-align: center;
+	margin-top: 50px;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.std-title{
+	border-bottom: 4px solid #6ad07c;
+	width: 35%;
+	min-width: 300px;
+	margin: auto;
+}
+
+.std-content{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-size: 1.2em;
+}
 
 
 @media only screen and   (min-width: 1780px) {
