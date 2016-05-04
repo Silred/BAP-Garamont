@@ -42,21 +42,54 @@ Style
 	margin-top: 100px;
 }
 
+
+
 .footer{
-	font-size: 16px;
+	font-size: 17px;
 	height: auto;
 	background: #363636;
+}
+
+.footer h3{
+	font-size: 19px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	margin-top: 15px;
 	color: #ffffff;
 }
 
 .footer a{
 	text-align: left;
-	color: #ffffff;
 	display: block;
+	color: #d0d0d0;
+	margin-top: 6px;
+}
+
+.footer img{
+	width: 200px;
+	height: auto;
+	margin-bottom: 25px;
+}
+
+.footer a:hover{
+	text-align: left;
+	display: block;
+	color: #ffffff;
 }
 
 .footer p{
+	display: block;
+	color: #d0d0d0;
+	margin-top: 6px;
+}
+
+.footer-legal{
 	text-align: center;
+}
+
+.footer .col-md-3, .footer .col-md-2{
+	margin-bottom: 35px;
+	margin-top: 35px;
 }
 
 .no-padding{
@@ -219,7 +252,7 @@ Préfix: home-
 	margin: 0 auto;
 	text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
 	/* Clip Background Image */
-	background: url(img/landscape.jpg) repeat-y;
+	background: url(img/landscape.jpg) center center;
 	-webkit-background-clip: text;
 	/* Animate Background Image */
 	-webkit-text-fill-color: transparent;
@@ -557,7 +590,7 @@ Préfix: page-
 
 @media only screen and   (min-width: 1780px) {
 	#menu-primary{
-		margin-left: 10vw;
+		margin-left: 8vw;
 	}
 }
 
