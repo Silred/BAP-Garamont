@@ -42,6 +42,8 @@ Style
 	margin-top: 100px;
 }
 
+
+
 .footer{
 	font-size: 17px;
 	height: auto;
@@ -439,70 +441,111 @@ Style
 Préfix: fm-
 */
 
-
-
-.fm-contenu{
-	height: 88vh;
+.fm-header {
+	min-height: 450px;
+	background-size: cover;
 }
 
-.fm-contenu ul, li{
-	list-style-type: none;
-	cursor: pointer;
+.fm-header h2 {
+    font-size: 1.5em;
+    border-bottom: 3px solid #56e8ab;	
+    color: white;
+    text-transform: uppercase;
+    font-family: sans-serif;
 }
 
-.fm-contenu li{
+.fm-header h1 {
+	font-size: 2em;
+    color: white;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+.tabs-content section:not(.active) {
+    display: none;
+}
+
+.fm-toggle-button {
+    height: 53px;
+    overflow: hidden;
+}
+
+.fm-toggle-button:hover {
+    height: auto;
+}
+
+.fm-lien-toggle {
+    background: white;
+    padding: 15px 0px;
+    border-bottom: 2px solid grey;
+}
+
+.tabs li ul li {
+    background: #56e8ab;
+    padding: 15px 0px;
+    border-bottom: 2px solid white;
+}
+
+.tabs {
+    text-align: center;
+    border-right: 3px solid #56e8ab;
+    padding: 0;
+}
+
+
+.tabs a {
+    color: black;
+    font-size: 1.3em;
+    font-family: sans-serif;
+}
+
+.tabs-content {
+    margin: 10px;
+    padding: 20px;
+    background: white;
+}
+
+.tabs-content p {
+	width: 70%;
+	margin: 20px;
+}
+
+.tabs-content h3 {
+    font-size: 2em;
+    font-family: sans-serif;
+}
+
+.fm-img {
+    border-right: 3px solid #56e8ab;
+    border-bottom: 3px solid #56e8ab;
+    display: block;
+    margin: 14px auto;
+}
+
+.fm-icone {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    width: 20%;
+}
+
+.fm-content-info {
 	width: 100%;
-	padding-top: 25px;
-	padding-bottom: 25px;
+	margin: 20px;	
 }
 
-.fm-left{
-	background-color: #00a0d2;
+.fm-button-info {
+    padding: 5px 10px;
+    border: 1px solid #56e8ab;
+    color: #56e8ab;
+    display: block;
+    width: 20%;
+    text-align: center;
+    margin: auto;
 }
 
-.fm-right{
-	background-color: #00b9eb;
-}
-
-.fm-liste{
-	padding: 0!important;
-	height: 88vh;
-	color: #ffffff;
-}
-
-.fm-menu-left{
-	position: relative;
-}
-
-
-
-.fm-menu-left:after{
-	left: 100%;
-	top: 50%;
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	border-color: rgba(136, 183, 213, 0);
-	border-left-color: #88b7d5;
-	border-width: 30px;
-	margin-top: -30px;
-	z-index: 1;
-}
-
-.fm-menu-total{
-	background: #000000;
-	height: 88vh;
-}
-
-
-.fm-active-right{
-	font-weight: bolder;
-	font-size: larger;
-}
-
-.fm-active-left{
-	background-color: #00b9eb;
+.fm-box-info {
+    margin: 20px auto;
 }
 
 /*
@@ -562,16 +605,6 @@ Page standard
 Style
 Préfix: page-
 */
-
-.no-padding > [class*='intro-header'] {
-    padding-right:0;
-    padding-left:0;
-}
-.intro-header {
-    background: url("img/garamont.jpg");
-    height: 300px;
-    width: 100%;
-}
 
 .std-title h1{
 	font-size: 3.6em;

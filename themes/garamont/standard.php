@@ -6,23 +6,20 @@
 
         <?php while (have_posts()) : the_post(); ?>
 
-        <div class="intro-header">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="intro-message">
-                              <div class="std-title">
-                                <h1>
-                                    <?php the_title(); ?>
-                                </h1>
-                              </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
             <div class="container">
+
+                <div class="std-title">
+
+                    <h1>
+
+                        <?php the_title(); ?>
+
+                    </h1>
+
+                </div>
+
+
                 <?php the_post_thumbnail('full', array('class' => 'img-responsive std-thumbnail')); ?>
 
                 <div class="std-content">
