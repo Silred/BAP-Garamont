@@ -114,3 +114,5 @@ function create_post_type() {
 
     flush_rewrite_rules();
 }
+
+

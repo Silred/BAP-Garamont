@@ -466,7 +466,8 @@ Préfix: fm-
 }
 
 .fm-toggle-button {
-    height: 53px;
+    min-height: 53px;
+    max-height: 100px;
     overflow: hidden;
 }
 
@@ -476,7 +477,7 @@ Préfix: fm-
 
 .fm-lien-toggle {
     background: white;
-    padding: 15px 0px;
+    padding: 20px 0px;
     border-bottom: 2px solid grey;
 }
 
@@ -598,6 +599,93 @@ img.attachment-crea-album-grid {
 #crea-carousel {
     height: 400px;
     overflow: hidden;
+}
+
+
+.gc-content h1 {
+	font-size: 4.5em;
+	letter-spacing: 4px;
+    font-family: sans-serif;
+    font-weight: 900;
+	word-spacing: 15px;
+    text-align: center;
+    text-transform: uppercase;
+	padding: .25em 0 .325em;
+	display: block;
+	margin: 10% auto 0;
+	text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+	/* Clip Background Image */
+	background: url(img/landscape.jpg) center center;
+	-webkit-background-clip: text;
+	/* Animate Background Image */
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: aitf 80s linear infinite;
+	/* Activate hardware acceleration for smoother animations */
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;	
+}
+
+.gc-sous-titre {
+    margin: auto;
+    margin-top: 20px;
+    font-size: 2em;
+    margin-bottom: 40px;
+    width: 70%;
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: #2a2a2a;
+	font-weight: lighter;
+}
+
+
+.gc-form-control, .postform {
+    display: inline-block;
+    width: auto;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.gc-box {
+    background: #1a1a1a;
+    height: 300px;
+	color: white;	
+}
+
+.gc-box h3 {
+    text-align: left;
+    color: white;
+    font-size: 1em;
+    margin-top: 35px;
+    margin-bottom: 35px;
+	width: 100%;
+}
+
+.gc-box p {
+	color: white!important;
+}
+
+.gc-img img {
+    width: 100%;
+	height: 100%;
+}
+
+.gc-img {
+    overflow: hidden;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+	background: #4cffb5;
+}
+
+.gc-img:hover img{
+	opacity: 0.2;
+}
+
+
+#gc-domaine, #gc-theme {
+	display: inline-block;
 }
 
 /*

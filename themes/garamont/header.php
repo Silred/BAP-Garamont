@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/unslider.css" type="text/css"/>
     <script src="<?php bloginfo('template_directory'); ?>/js/jquery-1.12.1.min.js"></script>
     <script src="<?php bloginfo('template_directory'); ?>/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.js"></script>
 </head>
 
 
