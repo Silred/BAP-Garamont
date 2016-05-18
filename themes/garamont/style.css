@@ -469,10 +469,12 @@ Préfix: fm-
     min-height: 53px;
     max-height: 100px;
     overflow: hidden;
+	-webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
 }
 
 .fm-toggle-button:hover {
-    height: auto;
+    max-height: 1000px;
 }
 
 .fm-lien-toggle {
