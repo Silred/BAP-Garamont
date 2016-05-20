@@ -7,15 +7,25 @@
  */
 ?>
 
-<div class="row  footer">
+<div style="z-index:-1;" class="row  footer-contact wow zoomIn">
+    <p><a href="http://simondebray.fr/garamont/contact/">Nous contacter</a></p>
+</div>
 
-    <div class="col-md-1"></div>
+<div style="z-index:5;" class="row  footer">
+
+    <div class="col-md-1"1></div>
 
     <div class="col-md-3">
 
         <img src="http://simondebray.fr/garamont/wp-content/uploads/2016/04/Sans-titre-1.png" alt=""/>
 
         <p>Téléphone : 01.41.57.32.20</p>
+
+        <h3>LYCÉE CLAUDE GARAMONT</h3>
+
+        <p>69 rue de l'industrie 92707 Colombes</p>
+
+        <p>Bus : Ligne 176</p>
 
         <p>Mail :  contact@garamont.fr</p>
 
@@ -34,12 +44,6 @@
     </div>
 
     <div class="col-md-3">
-
-        <h3>LYCÉE CLAUDE GARAMONT</h3>
-
-        <p>69 rue de l'industrie 92707 Colombes</p>
-
-        <p>Bus : Ligne 176</p>
 
         <p>Arrêt : Rue de l'industrie</p>
 
@@ -67,6 +71,9 @@
 
 </div>
 
+<script>
+     new WOW().init();
+</script>
 
 <script>
     jQuery(function($) {

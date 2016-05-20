@@ -47,7 +47,7 @@
 				<?php $img = 'image_'.$i; ?>
                 <?php $content = 'descritpion_'.$i; ?>
 
-                <div class="<?php if($i == 1 || $i == 2 || $i == 3) { ?>col-md-offset-1 home-box <?php if ($i == 1) { ?>col-md-4<?php }else if ($i == 2 || $i == 3) { ?>col-md-2<?php }}else if ($i == 4) { ?>col-md-2<?php }else if ($i == 5) { ?>col-md-5 col-md-offset-1<?php } ?> home-box-<?php echo $i; ?>">
+                <div class="<?php if($i == 1 || $i == 2 || $i == 3) { ?>col-md-offset-1 home-box <?php if ($i == 1) { ?>col-md-4  bounceInLeft  wow<?php }else if ($i == 3) { ?>col-md-2  bounceInRight  wow <?php }else if ($i == 2){ ?>col-md-2  bounceInUp  wow  <?php }}else if ($i == 4) { ?>col-md-2<?php }else if ($i == 5) { ?>col-md-5 col-md-offset-1  bounceInLeft  wow<?php } ?> home-box-<?php echo $i; ?>">
 
 
 
@@ -96,7 +96,7 @@
 			
 			
             <?php } ?>
-					<div class="col-md-5 home-box-6">
+					<div class="col-md-5 home-box-6  bounceInRight  wow">
 					<h3 class="home-citation"><?php the_field(titre_6) ?></h3>
 					 <?php query_posts('orderby=rand&showposts=1&post_type=temoignage'); ?>
 					  <?php while (have_posts()): the_post(); ?>

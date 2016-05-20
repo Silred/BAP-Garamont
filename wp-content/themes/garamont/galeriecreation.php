@@ -29,94 +29,137 @@ function slugify($text)
   }
   return $text;
 }
+
+
+
 ?>
 
-<div class="fm-contenu  row">
+<div class="gc-content">
 
-       <div class="col-md-2"></div>
-       <div class="col-md-6">
+	<div style="margin:auto; margin-bottom:75px; margin-top: 50px; width:80%; height:500px; position: relative;">
 
+		<svg fill="white" style="position: absolute" height="100%" width="100%" viewBox="0 0 250 100" preserveAspectRatio="none">
+			<path class="path-grand" d="M0 0 L0 100 L100 100 L100 96 L4 96 L4 4 L100 4 L100 0 L0 0 Z" />
+			<path class="path-grand" d="M150 0 L250 0 L250 100 L150 100 L150 96 L246 96 L246 4 L150 4 L150 0 Z" />
 
-            <?php $f_query = new WP_Query(array('post_type' => 'galerie', 'posts_per_page' => '-1')); ?>
-            <?php while ($f_query->have_posts()) : $f_query->the_post(); ?>
+			<path class="path-moyen" d="M0 0 L0 100 L100 100 L100 96 L4 96 L4 4 L100 4 L100 0 L0 0 Z" />
+			<path class="path-moyen" d="M150 0 L250 0 L250 100 L150 100 L150 96 L246 96 L246 4 L150 4 L150 0 Z" />
 
-                <div class="fm-info  hide" id="galerie-<?php echo slugify(get_the_title()) ?>">
-                    <h2><?php the_title(); ?></h2>
-                </div>
+			<path class="path-petit" d="M0 0 L0 100 L100 100 L100 96 L4 96 L4 4 L100 4 L100 0 L0 0 Z" />
+			<path class="path-petit" d="M150 0 L250 0 L250 100 L150 100 L150 96 L246 96 L246 4 L150 4 L150 0 Z" />
+			Sorry, your browser does not support inline SVG.
+		</svg>
 
-            <?php endwhile; ?>
+		<div style="position: absolute; top: 7%; width:100%">
+			<h1><?php the_field(sous_titre); ?></h1>
 
-            <?php $query = new WP_Query(array('post_type' => 'creation', 'posts_per_page' => '-1')); ?>
-            <?php while ($query->have_posts()) : $query->the_post(); ?>
+			<div class="gc-sous-titre"><?php echo the_title(); ?></div>
 
-                <div class="fm-info  hide" id="lacreation-<?php echo slugify(get_the_title()) ?>">
-                    <h2><?php the_title(); ?></h2>
-                </div>
-
-            <?php endwhile; ?>
-
-        </div>
-        <div class="col-md-4">
-            <div class="row">
-                <div class="col-md-6  fm-left  fm-liste">
-
-                    <ul>
-
-                        <?php $f_query = new WP_Query(array('post_type' => 'galerie', 'posts_per_page' => '-1')); ?>
-                        <?php while ($f_query->have_posts()) : $f_query->the_post(); ?>
-
-                            <div class="fm-menu-left">
-
-                                <li id="<?php echo slugify(get_the_title()) ?>">
-                                    <?php the_title(); ?>
-                                </li>
-
-                            </div>
-
-                        <?php endwhile; ?>
+		</div>
+	</div>
 
 
-                    </ul>
+<div class="content"></div>
+	<div class="container">
+		<div class="col-md-5">
+			<div id="gc-domaine">
+				<?php
 
-                </div>
+				function replace_id_for_slug($option){
+				$categories = get_categories("hide_empty=0");
 
-                <div class="col-md-6  fm-liste">
+				preg_match('/value="(\d*)"/', $option[0], $matches);
 
-                    <?php $my_query = new WP_Query(array('post_type' => 'galerie', 'posts_per_page' => '-1')); ?>
-                    <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+				$id = $matches[1];
 
-                        <?php $cat =  slugify(get_the_title()); ?>
+				$slug = "";
 
-                        <div class="row">
+				foreach($categories as $category){
+					if($category->cat_ID == $id){
+						$slug = $category->slug;
+					}
+				}
 
-                            <div class="col-md-12  fm-menu-right  hide" id="menu-<?php echo slugify(get_the_title()) ?>">
+				return preg_replace("/value=\"(\d*)\"/", "value=\"$slug\"", $option[0]);
+				}
 
-                                <ul>
+				$select = wp_dropdown_categories("show_option_none=Domaine&child_of=2&hierarchical=1&hide_empty=0&echo=0");
 
-                                    <li id="galerie-<?php echo slugify(get_the_title()) ?>">
-                                        La formation
-                                    </li>
+				$select = preg_replace_callback("#<option[^>]*>[^<]*</option>#", "replace_id_for_slug", $select);
 
-                                    <?php $query = new WP_Query(array('post_type' => 'creation', 'category_name' => $cat , 'posts_per_page' => '-1')); ?>
-                                    <?php while ($query->have_posts()) : $query->the_post(); ?>
+				echo $select;
 
-                                        <li id="metier-<?php echo slugify(get_the_title()) ?>">
-                                            <?php the_title(); ?>
-                                        </li>
+				?>
+			</div>
+			<div id="gc-theme">
+				<?php
 
-                                    <?php endwhile; ?>
+				$select = wp_dropdown_categories("show_option_none=Thème&child_of=5&hierarchical=1&hide_empty=0&echo=0");
 
-                                </ul>
-                            </div>
-                        </div>
+				$select = preg_replace_callback("#<option[^>]*>[^<]*</option>#", "replace_id_for_slug", $select);
 
-                    <?php endwhile; ?>
-                </div>
-            </div>
-        </div>
-    </div>
+				echo $select;
+
+				?>
+			</div>
+			<select class="form-control gc-form-control">
+				<?php
+					for($i=date('Y');$i>1999; $i--) {
+						echo "<option>".$i."</option>";
+					}
+				?>
+			</select>	
+		</div>
+		
+		<div class="col-md-2 col-md-offset-3">
+		</div>
+	</div>
+	
+	<div class="gc-box col-md-2">
+		<h3><?php the_field(titre_date); ?></h3>
+		<p><?php the_field(contenu_texte); ?></p>
+	</div>
+	
+	<?php $query2 = new WP_Query(array('post_type' => 'creation', 'orderby' => 'date')); ?>
+			
+	<?php if( have_posts() ): 
+		$id_img = 1;
+		while($query2->have_posts()) { 
+			$query2->the_post();
+			$categories = get_the_category();
+	?>
+			<?php if ($id_img == 3) {?>
+				<div class="row"></div>
+			<?php } ?>
+			<div class="col-md-<?php if ($id_img == 1 || $id_img == 2) { ?>5<?php } else { ?>4<?php } ?> gc-img
+						<?php foreach ( $categories as $category ) { echo $category->slug." "; } ?> ">
+				<?php $id_crea = get_the_ID ();
+					  $thumb_id = get_post_thumbnail_id();
+					  $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
+					?>
+				
+				<a href="<?php echo $thumb_url[0]; ?>" data-toggle="lightbox">
+					<?php the_post_thumbnail('full'); ?>
+				</a>
+			</div>
+		<?php 
+		$id_img ++;
+		} 
+	endif;  
+	
+	$query2->reset_postdata();
+	
+	?>	
+	<div class="row"></div>
+	
 </div>
 
     <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/navpage-galerie.js"></script>
+<script type="text/javascript">
+$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+}); 
+</script>
 
 <?php get_footer(); ?>

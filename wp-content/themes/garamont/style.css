@@ -10,6 +10,15 @@ Text Domain: Garamont
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+@font-face {
+	font-family: 'latoregular';
+	src: url('css/lato-regular-webfont.woff') format('woff2'),
+	url('css/lato-regular-webfont.woff2') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 /*
 Reset Style
 */
@@ -24,13 +33,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	outline: 0;
 	padding: 0;
 	vertical-align: baseline;
+	font-family: latoregular;
 }
+
+
 
 body{
 	overflow-x: hidden;
 	background: url("img/fond.jpg");
 	background-size: cover;
 }
+
+
 
 
 /*
@@ -42,7 +56,29 @@ Style
 	margin-top: 100px;
 }
 
+.footer-contact{
+	height: 120px;
+	color: #ffffff;
+	background: #6cf9ab;
+	text-align: center;
+}
 
+.footer-contact a, .footer-contact p{
+	color: #ffffff;
+	padding: 25px 40px;
+	text-align: center;
+	margin-top: 25px;
+	font-size: 22px;
+}
+
+.footer-contact a{
+	border: solid 3px #ffffff;
+}
+
+.footer-contact a:hover{
+	color: #ffffff;
+	text-decoration: none;
+}
 
 .footer{
 	font-size: 17px;
@@ -199,13 +235,25 @@ Préfix: header-
 }
 
 .navbar li:hover {
-	border-bottom: 0.2em solid rgba(106, 208, 124, 0.8);
+	color: #6cf9ab!important;
 }
 
-.navbar .active{
-	border-bottom: 0.2em solid rgba(106, 208, 124, 1);
+.navbar a:hover {
+	color: #6cf9ab!important;
 }
 
+.navbar .active:first-child{
+	color: #6cf9ab!important;
+}
+
+
+.yourcustomclass a{
+	color: #000000;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+	color: #6cf9ab;
+}
 
 /*
 HOME PAGE
@@ -281,9 +329,6 @@ Préfix: home-
 	margin-bottom: 30px;
 	border-right: 3px solid #6ad07c;
 	border-bottom: 3px solid #6ad07c;
-	-webkit-box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.67);
-	-moz-box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.67);
-	box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.67);
 }
 
 .home-page h3 {
@@ -407,9 +452,6 @@ Préfix: home-
     position: relative;
 	overflow: hidden;
 	padding-right: 0;
-	-webkit-box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.67);
-	-moz-box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.67);
-	box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.67);
 }
 
 .home-citation-fond {
@@ -423,7 +465,6 @@ Préfix: home-
     padding: 105px 20px;
 	color: white;
 	font-size: 1.2em;
-	text-shadow: 4px 4px 2px rgba(0, 0, 0, 1);
 	font-weight: 800;
 }
 
@@ -431,7 +472,6 @@ Préfix: home-
     text-align: center;
 	color: white;
 	font-size: 1.2em;
-	text-shadow: 4px 4px 2px rgba(0, 0, 0, 1);
 	font-weight: 900;
 }
 
@@ -441,70 +481,129 @@ Style
 Préfix: fm-
 */
 
-
-
-.fm-contenu{
-	height: 88vh;
+.fm-header {
+	min-height: 450px;
+	background-size: cover;
 }
 
-.fm-contenu ul, li{
-	list-style-type: none;
-	cursor: pointer;
+.fm-header h2 {
+    font-size: 1.5em;
+    border-bottom: 3px solid #56e8ab;	
+    color: white;
+    text-transform: uppercase;
+    font-family: sans-serif;
 }
 
-.fm-contenu li{
+.fm-header h1 {
+	font-size: 2em;
+    color: white;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+.tabs-content section:not(.active) {
+    display: none;
+}
+
+.fm-toggle-button {
+	height: 53px;
+	max-height: 100px;
+	overflow: hidden;
+}
+
+.fm-lien-toggle {
+	background: white;
+	padding: 20px 0px;
+	border-bottom: 2px solid grey;
+}
+
+.fm-toggle-button:hover {
+    height: auto;
+}
+
+.fm-toggle-button:hover {
+	max-height: 1000px;
+}
+
+
+.tabs li ul li {
+    background: #56e8ab;
+    padding: 15px 0px;
+    border-bottom: 2px solid white;
+}
+
+.tabs {
+    text-align: center;
+    border-right: 3px solid #56e8ab;
+    padding: 0;
+}
+
+
+.tabs a {
+    color: black;
+    font-size: 1.3em;
+    font-family: sans-serif;
+}
+
+.tabs-content {
+    margin: 10px;
+    padding: 20px;
+    background: white;
+}
+
+.tabs-content p {
+	width: 70%;
+	margin: 20px;
+}
+
+.tabs-content h3 {
+    font-size: 2em;
+    font-family: sans-serif;
+}
+
+.fm-img {
+    border-right: 3px solid #56e8ab;
+    border-bottom: 3px solid #56e8ab;
+    display: block;
+    margin: 14px auto;
+}
+
+.fm-icone {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    width: 20%;
+}
+
+.fm-content-info {
 	width: 100%;
-	padding-top: 25px;
-	padding-bottom: 25px;
+	margin: 20px;	
 }
 
-.fm-left{
-	background-color: #00a0d2;
+.fm-button-info {
+    padding: 5px 10px;
+    border: 1px solid #56e8ab;
+    color: #56e8ab;
+    display: block;
+    width: 20%;
+    text-align: center;
+    margin: auto;
 }
 
-.fm-right{
-	background-color: #00b9eb;
-}
-
-.fm-liste{
-	padding: 0!important;
-	height: 88vh;
-	color: #ffffff;
-}
-
-.fm-menu-left{
-	position: relative;
+.fm-box-info {
+    margin: 20px auto;
 }
 
 
 
-.fm-menu-left:after{
-	left: 100%;
-	top: 50%;
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	border-color: rgba(136, 183, 213, 0);
-	border-left-color: #88b7d5;
-	border-width: 30px;
-	margin-top: -30px;
-	z-index: 1;
+.no-padding > [class*='intro-header'] {
+	padding-right:0;
+	padding-left:0;
 }
-
-.fm-menu-total{
-	background: #000000;
-	height: 88vh;
-}
-
-
-.fm-active-right{
-	font-weight: bolder;
-	font-size: larger;
-}
-
-.fm-active-left{
-	background-color: #00b9eb;
+.intro-header {
+	background: url("img/garamont.jpg");
+	height: 300px;
+	width: 100%;
 }
 
 /*
@@ -565,6 +664,8 @@ Style
 Préfix: page-
 */
 
+
+
 .std-title h1{
 	font-size: 3.6em;
 	font-weight: 700;
@@ -587,6 +688,164 @@ Préfix: page-
 	font-size: 1.2em;
 }
 
+
+
+
+
+
+form {
+	border-radius: 2px 2px 8px 8px;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+
+form ul li:not(:last-child) {
+	display: block;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 1em;
+}
+
+form ul li{
+	list-style-type: none;
+}
+
+label {
+	display: block;
+	font-size: 1.125em;
+	color: #6cf9ab;
+	opacity: 1;
+	margin: 6px;
+}
+
+input, textarea {
+	display: block;
+	width: 100%;
+	height: 90%;
+	border: 0;
+	outline: none;
+	padding: 0 1em 0;
+	font-size: 1.2em;
+}
+
+textarea {
+	height: 16em;
+	resize: none;
+	font-size: 1.2em;
+	padding-left: 0.85em;
+}
+
+input[type="submit"] {
+	display: block;
+	background: #6cf9ab;
+	padding: 1em;
+	color: white;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.js-hide-label label {
+	opacity: 0;
+	top: 1.8em;
+}
+
+.js-unhighlight-label label {
+	color: #333;
+}
+
+.js-highlight-label label {
+	color: #f1773b;
+}
+
+
+.gc-content h1 {
+	font-size: 4.5em;
+	letter-spacing: 4px;
+	font-family: sans-serif;
+	font-weight: 900;
+	word-spacing: 15px;
+	text-align: center;
+	text-transform: uppercase;
+	padding: .25em 0 .325em;
+	display: block;
+	margin: 10% auto 0;
+	text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+	/* Clip Background Image */
+	background: url(img/landscape.jpg) center center;
+	-webkit-background-clip: text;
+	/* Animate Background Image */
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: aitf 80s linear infinite;
+	/* Activate hardware acceleration for smoother animations */
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+}
+
+.gc-sous-titre {
+	margin: auto;
+	margin-top: 20px;
+	font-size: 2em;
+	margin-bottom: 40px;
+	width: 70%;
+	text-align: center;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	color: #2a2a2a;
+	font-weight: lighter;
+}
+
+
+.gc-form-control, .postform {
+	display: inline-block;
+	width: auto;
+	border: none;
+	background: transparent;
+	box-shadow: none;
+}
+
+.gc-box {
+	background: #1a1a1a;
+	height: 300px;
+	color: white;
+}
+
+.gc-box h3 {
+	text-align: left;
+	color: white;
+	font-size: 1em;
+	margin-top: 35px;
+	margin-bottom: 35px;
+	width: 100%;
+}
+
+.gc-box p {
+	color: white!important;
+}
+
+.gc-img img {
+	width: 100%;
+	height: 100%;
+}
+
+.gc-img {
+	overflow: hidden;
+	height: 300px;
+	margin: 0;
+	padding: 0;
+	background: #4cffb5;
+}
+
+.gc-img:hover img{
+	opacity: 0.2;
+}
+
+
+#gc-domaine, #gc-theme {
+	display: inline-block;
+}
+
+.page-id-131 .footer-contact{
+	display: none;
+}
 
 @media only screen and   (min-width: 1780px) {
 	#menu-primary{
