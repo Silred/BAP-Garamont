@@ -973,6 +973,12 @@ Page single-témoignage
 Style
 Préfix: temoignage-
 */
+.post-content-temoignage{
+	width: 100%;
+	display: block;
+	background-color: #00a0d2;
+
+}
 
 .temoignage-contenu {
 	text-align: center;
@@ -998,4 +1004,46 @@ Préfix: temoignage-
     width: 80%;
     margin: 30px auto;
     text-align: justify;
+}
+
+.button-temoingnage{
+	background-color: transparent;
+	border: none;
+	padding:3%;
+	color: #4cae4c;
+}
+
+/*.button-temoingnage h2 p{*/
+	/*color: #4cae4c;*/
+/*}*/
+
+/*Page single-Actualité
+Style
+Préfix: Actualité-
+*/
+
+#title-actualite {
+	text-align: left;
+	font-size: 4em;
+	padding-bottom: 2%;
+}
+
+.post-content-actualite h2 {
+	font-size: 3em;
+	padding-left: 5%;
+	padding-bottom: 1%;
+	color: #4cae4c;
+}
+
+.post-content-actualite  {
+	padding-left: 10%;
+	padding-right: 10%;
+	background-color: rgba(0, 0, 0, 0.16);
+}
+.post-content-actualite p {
+	padding-bottom: 4%;
+}
+
+.image-actualite {
+	padding: 10%;
 }
