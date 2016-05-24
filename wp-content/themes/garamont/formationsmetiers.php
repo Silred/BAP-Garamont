@@ -64,19 +64,21 @@ function slugify($text)
 						<?php $query2 = new WP_Query(array('post_type' => 'formations', 'posts_per_page' => '-1','orderby'=> 'id')); ?>
 						<?php while ($query2->have_posts()) : $query2->the_post(); ?>
 
-						<li class="fm-toggle-button">
-							<div class="fm-lien-toggle">
+						<li id="form-<?php the_ID() ?>">
+							<div class="fm-lien-toggle" id="lien-<?php the_ID(); ?>">
 								<a  href="#formation-<?php the_ID(); ?>" data-toggle="tab"><?php the_title();?></a>
 							</div>
-							<?php $metiers = get_field('metiers');?>
-							<?php if ($metiers): ?>
-							<ul>
-								<?php foreach ($metiers as $post) : ?>
+							<div class="fm-toggle-button" id="fm-toggle-lien-<?php the_ID(); ?>">
+								<?php $metiers = get_field('metiers');?>
+								<?php if ($metiers): ?>
+								<ul>
+									<?php foreach ($metiers as $post) : ?>
 									<?php setup_postdata($post); ?>
-								<li><a href="#metier-<?php the_ID(); ?>" data-toggle="tab"><?php the_title(); ?></a></li>
-								<?php endforeach; ?>
-								<?php wp_reset_postdata(); ?>
-							</ul>
+									<li><a href="#metier-<?php the_ID(); ?>" data-toggle="tab"><?php the_title(); ?></a></li>
+									<?php endforeach; ?>
+									<?php wp_reset_postdata(); ?>
+								</ul>
+							</div>
 						</li>
 						<?php endif; endwhile; ?>
 					</ul>
@@ -143,6 +145,7 @@ function slugify($text)
 	</div>
 </div>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery-tabs.min.js"></script>
+	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/navpage.js"></script>
 	<script>
 		$(function() {
 			$('.tabs').tabs();
