@@ -34,6 +34,9 @@ function slugify($text)
 
 ?>
 
+
+<div id="myDiv"></div>
+
 <div class="gc-content">
 
 	<div style="margin:auto; margin-bottom:75px; margin-top: 50px; width:80%; height:500px; position: relative;">
@@ -66,21 +69,21 @@ function slugify($text)
 				<?php
 
 				function replace_id_for_slug($option){
-				$categories = get_categories("hide_empty=0");
+					$categories = get_categories("hide_empty=0");
 
-				preg_match('/value="(\d*)"/', $option[0], $matches);
+					preg_match('/value="(\d*)"/', $option[0], $matches);
 
-				$id = $matches[1];
+					$id = $matches[1];
 
-				$slug = "";
+					$slug = "";
 
-				foreach($categories as $category){
-					if($category->cat_ID == $id){
-						$slug = $category->slug;
+					foreach($categories as $category){
+						if($category->cat_ID == $id){
+							$slug = $category->slug;
+						}
 					}
-				}
-
-				return preg_replace("/value=\"(\d*)\"/", "value=\"$slug\"", $option[0]);
+					
+					return preg_replace("/value=\"(\d*)\"/", "value=\"$slug\"", $option[0]);
 				}
 
 				$select = wp_dropdown_categories("show_option_none=Domaine&child_of=2&hierarchical=1&hide_empty=0&echo=0");
@@ -99,7 +102,7 @@ function slugify($text)
 				$select = preg_replace_callback("#<option[^>]*>[^<]*</option>#", "replace_id_for_slug", $select);
 
 				echo $select;
-
+				
 				?>
 			</div>
 			<select class="form-control gc-form-control">
@@ -154,12 +157,12 @@ function slugify($text)
 	
 </div>
 
-    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/navpage-galerie.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/navpage-galerie.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.js"></script>
 <script type="text/javascript">
-$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
-}); 
+	$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+		event.preventDefault();
+		$(this).ekkoLightbox();
+	}); 
 </script>
-
 <?php get_footer(); ?>

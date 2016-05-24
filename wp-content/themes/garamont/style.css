@@ -517,14 +517,9 @@ Préfix: fm-
 	border-bottom: 2px solid grey;
 }
 
-.fm-toggle-button:hover {
-    height: auto;
+.fm-toggle-button {
+	display: none;
 }
-
-.fm-toggle-button:hover {
-	max-height: 1000px;
-}
-
 
 .tabs li ul li {
     background: #56e8ab;

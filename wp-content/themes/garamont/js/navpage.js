@@ -1,3 +1,3 @@
-$( ".fm-toggle-button" ).click(function() {
-  $( this ).addClass( "toggle-active" );
+$( ".fm-lien-toggle" ).click(function() {
+  	$("#fm-toggle-" + this.id).slideToggle();
 });
