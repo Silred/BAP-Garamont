@@ -506,8 +506,7 @@ Préfix: fm-
 }
 
 .fm-toggle-button {
-	height: 53px;
-	max-height: 100px;
+	height: auto;
 	overflow: hidden;
 }
 
