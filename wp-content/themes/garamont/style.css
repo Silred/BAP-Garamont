@@ -977,8 +977,19 @@ Préfix: temoignage-
 .post-content-temoignage{
 	width: 100%;
 	display: block;
-	background-color: #00a0d2;
-
+	height: 300px;
+}
+.pop-up p {
+	color: #000000;
+	font-size: 100%;
+}
+.post-content-temoignage h2 , p {
+	color: #6cf9ab;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding-top: 7%;
+	text-align: center;
+	font-size: 150%;
 }
 
 .temoignage-contenu {
@@ -1011,8 +1022,9 @@ Préfix: temoignage-
 	background-color: transparent;
 	border: none;
 	padding:3%;
-	color: #4cae4c;
+	height: 333px;
 }
+
 
 /*.button-temoingnage h2 p{*/
 	/*color: #4cae4c;*/

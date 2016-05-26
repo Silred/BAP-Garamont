@@ -67,21 +67,22 @@
                 ?>
 
              <div class="col-md-6">
+                 <button type="button" class="button-temoingnage" data-toggle="modal" data-target="#myModal<?php echo $temoingnage;?>">
+                <div class="post-content-temoignage" style="background-image: url('<?php the_field('image_button'); ?>'); ">
 
-                <div class="post-content-temoignage">
-                    <button type="button" class="button-temoingnage" data-toggle="modal" data-target="#myModal<?php echo $temoingnage;?>">
 
                         <h2><?php echo get_the_title(); ?></h2>
                         <h2><?php echo get_the_post_thumbnail(); ?></h2>
                         <p><?php echo substr( get_the_content(), 0, 100); ?></p>
 
-                    </button>
-                </div>
 
+                    </div>
+                 </button>
              </div>
 
 
                 <!-- Modal -->
+              <div class="pop-up">
                 <div class="modal fade" id="myModal<?php echo $temoingnage;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -99,6 +100,7 @@
                         </div>
                     </div>
                 </div>
+                  </div>
             <?php } ?>
 
 
