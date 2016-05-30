@@ -21,7 +21,7 @@ register_nav_menus( array(
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
 
-    // Dupliquer le register_post_type pour ajouter d'autres CPT
+
 
     register_post_type('metiers',
         array(
@@ -110,21 +110,36 @@ function create_post_type() {
             'supports' => array( 'title', 'editor', 'thumbnail', 'revisions' ),
             'taxonomies' => array( 'category')
         )
-    );	
+    );
+
+    register_post_type('social',
+        array(
+            'labels' => array(
+                'name' => _x( 'Social', 'social' ),
+                'singular_name' => _x( 'Social', 'social' ),
+                'add_new' => _x( 'Ajouter', 'social' ),
+                'add_new_item' => _x( 'Ajouter un social', 'social' ),
+                'edit_item' => _x( 'Editer un social', 'social' ),
+                'new_item' => _x( 'Nouvelle social', 'social' ),
+                'view_item' => _x( 'Voir la social', 'social' ),
+                'search_items' => _x( 'Rechercher une social', 'social' ),
+                'not_found' => _x( 'Aucune Social trouvé', 'social' ),
+                'not_found_in_trash' => _x( 'Aucun Social dans la corbeille', 'social' ),
+                'parent_item_colon' => _x( 'Social parent :', 'social' ),
+                'menu_name' => _x( 'Social', 'social' ),
+            ),
+            'public' => true,
+            'supports' => array( 'title', 'thumbnail', 'revisions' )
+        )
+    );
 
     flush_rewrite_rules();
 }
-function bygga_bootstrap_scripts()
-{
-    if (!is_admin()) {
-        wp_register_script('bootstrapjs', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array(), '3.0.0');
-        wp_enqueue_script('bootstrapjs');
-    }
+
+
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+function posts_link_attributes() {
+    return 'class="hvr-sweep-to-right  slideInLeft wow"';
 }
-add_action('init', 'bygga_bootstrap_scripts');
-function bygga_bootstrap_styles()
-{
-    wp_register_style('bootstrapcss', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css', array(), '3.0.0', 'all');
-    wp_enqueue_style('bootstrapcss');
-}
-add_action('wp_enqueue_scripts', 'bygga_bootstrap_styles');

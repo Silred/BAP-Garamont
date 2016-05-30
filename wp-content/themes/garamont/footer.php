@@ -6,14 +6,14 @@
  * Time: 00:43
  */
 ?>
-
-<div style="z-index:-1;" class="row  footer-contact wow zoomIn">
-    <p><a href="http://simondebray.fr/garamont/contact/">Nous contacter</a></p>
+</div>
+<div style="z-index:-1;" class="row  footer-contact wow fadeIn">
+    <p><a class="hv-sweep-to-right" href="http://simondebray.fr/garamont/contact/">Nous contacter</a></p>
 </div>
 
 <div style="z-index:5;" class="row  footer">
 
-    <div class="col-md-1"1></div>
+    <div class="col-md-1"></div>
 
     <div class="col-md-3">
 

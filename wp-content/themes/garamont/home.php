@@ -1,7 +1,16 @@
 <?php /* Template Name: Home  */ ?>
 
 <?php get_header(); ?>
+
+<div class="video">
+	<button id="video-button">Passer l'introduction</button>
+	<video id="videoplay" autoplay>
+		<source src="<?php bloginfo('template_directory'); ?>/img/video.mp4" type="video/mp4">
+	</video>
+</div>
+
 <div class="home-page">
+
 
     <?php $query = new WP_Query(array('page_id' => 2, 'posts_per_page' => '1')); ?>
 	
@@ -117,6 +126,8 @@
 
 
     <script src="<?php bloginfo('template_directory'); ?>/js/unslider.js"></script>
+
+	<script src="<?php bloginfo('template_directory'); ?>/js/video.js"></script>
 
 
 <?php get_footer(); ?>

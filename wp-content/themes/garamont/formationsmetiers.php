@@ -37,14 +37,6 @@ function slugify($text)
 
 		<div style="margin:auto; padding-top: 25px; width:95%; height:400px; position: relative;">
 
-			<svg fill="white" style="position: absolute" height="100%" width="100%" viewBox="0 0 250 100" preserveAspectRatio="none">
-				<path class="path-grand" d="M0 0 L0 100 L100 100 L100 96 L4 96 L4 4 L100 4 L100 0 L0 0 Z" />
-				<path class="path-grand" d="M150 0 L250 0 L250 100 L150 100 L150 96 L246 96 L246 4 L150 4 L150 0 Z" />
-
-
-				Sorry, your browser does not support inline SVG.
-			</svg>
-
 			<div style="position: absolute; top: 40%; left: 5%; width:40%">
 				<h2><?php the_field('titre');?></h2>
 
@@ -94,7 +86,7 @@ function slugify($text)
 						<?php $query3 = new WP_Query(array('post_type' => 'formations', 'posts_per_page' => '-1','orderby'=> 'id')); ?>		
 						<?php while ($query3->have_posts()) : $query3->the_post(); ?>
 
-							<section class="fm-content wow bounceInRight" id="formation-<?php the_ID();?>">
+							<section class="fm-content bounceInRight" id="formation-<?php the_ID();?>">
 								<div class="fm-box-content">
 									<h3><?php the_title(); ?></h3>
 									
@@ -132,7 +124,7 @@ function slugify($text)
 						<?php $query4 = new WP_Query(array('post_type' => 'metiers', 'posts_per_page' => '-1','orderby'=> 'id')); ?>
 						<?php while ($query4->have_posts()) : $query4->the_post(); ?>
 
-							<section class="fm-content wow bounceInRight" id="metier-<?php the_ID();?>">
+							<section class="fm-content bounceInRight" id="metier-<?php the_ID();?>">
 								<?php the_title(); ?>
 								<?php the_content(); ?>
 							</section>

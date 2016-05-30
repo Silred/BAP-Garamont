@@ -41,22 +41,12 @@ function slugify($text)
 
 	<div style="margin:auto; margin-bottom:75px; margin-top: 50px; width:80%; height:500px; position: relative;">
 
-		<svg fill="white" style="position: absolute" height="100%" width="100%" viewBox="0 0 250 100" preserveAspectRatio="none">
-			<path class="path-grand" d="M0 0 L0 100 L100 100 L100 96 L4 96 L4 4 L100 4 L100 0 L0 0 Z" />
-			<path class="path-grand" d="M150 0 L250 0 L250 100 L150 100 L150 96 L246 96 L246 4 L150 4 L150 0 Z" />
-
-			<path class="path-moyen" d="M0 0 L0 100 L100 100 L100 96 L4 96 L4 4 L100 4 L100 0 L0 0 Z" />
-			<path class="path-moyen" d="M150 0 L250 0 L250 100 L150 100 L150 96 L246 96 L246 4 L150 4 L150 0 Z" />
-
-			<path class="path-petit" d="M0 0 L0 100 L100 100 L100 96 L4 96 L4 4 L100 4 L100 0 L0 0 Z" />
-			<path class="path-petit" d="M150 0 L250 0 L250 100 L150 100 L150 96 L246 96 L246 4 L150 4 L150 0 Z" />
-			Sorry, your browser does not support inline SVG.
-		</svg>
-
 		<div style="position: absolute; top: 7%; width:100%">
-			<h1><?php the_field(sous_titre); ?></h1>
 
-			<div class="gc-sous-titre"><?php echo the_title(); ?></div>
+
+			<h1>Galerie des créations</h1>
+
+			<div class="gc-sous-titre">	</div>
 
 		</div>
 	</div>
