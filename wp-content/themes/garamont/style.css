@@ -245,6 +245,7 @@ Style
 
 #page{
 	margin-top: 100px;
+	padding: 0;
 }
 
 .footer-contact{
@@ -433,18 +434,24 @@ Préfix: home-
     margin-top: 25px;
 }
 
+.home-titre {
+    height: 520px;
+    padding-top: 55px;
+    border-bottom: 5px solid #00FE9A;	
+}
+
 .home-content{
-	margin: auto;
-	margin-top: 20px;
-	font-size: 19px;
-	margin-bottom: 40px;
-	width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 17px;
+    margin-bottom: 40px;
+    width: 55%;
 }
 
 .home-content p {
     width: auto;
     margin: auto;
-    color: #323232;
+    color: #6EF8AB;
     font-family: sans-serif;
     font-weight: lighter;
 	text-align: justify;
@@ -456,10 +463,13 @@ Préfix: home-
 }
 
 .home-page h1 {
+	border-bottom: white 7px solid;
+    color: #6EF8AB;	
+    width: 50%;
 	font-size: 4.5em;
 	letter-spacing: 4px;
     font-family: sans-serif;
-    font-weight: 900;
+    font-weight: lighter;
 	word-spacing: 15px;
     text-align: center;
     text-transform: uppercase;
@@ -467,15 +477,6 @@ Préfix: home-
 	display: block;
 	margin: 0 auto;
 	text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
-	/* Clip Background Image */
-	background: url(img/landscape.jpg) center center;
-	-webkit-background-clip: text;
-	/* Animate Background Image */
-	-webkit-text-fill-color: transparent;
-	-webkit-animation: aitf 80s linear infinite;
-	/* Activate hardware acceleration for smoother animations */
-	-webkit-transform: translate3d(0, 0, 0);
-	-webkit-backface-visibility: hidden;
 }
 
 .home-page h2{
@@ -493,11 +494,19 @@ Préfix: home-
     height: auto;
 	min-width: 203px;
     min-height: 300px;
-    padding: 0px 8px 10px 8px;
-	margin-bottom: 30px;
-	border-right: 3px solid #6ad07c;
-	border-bottom: 3px solid #6ad07c;
+    padding: 35px 8px 10px 8px;
+	
 }
+
+.home-box:nth-child(1) , .home-box:nth-child(4) {
+	background: #E9E9E9;
+}
+
+.home-box:hover {
+	background: #6CF9AB;
+}
+
+
 
 .home-page h3 {
 	text-align: center;
@@ -553,7 +562,7 @@ Préfix: home-
 }
 
 
-.home-box-4 {
+.home-box-5 {
     background: #1a1a1a;
     height: 300px;
 	color: white;
@@ -561,7 +570,7 @@ Préfix: home-
 }
 
 
-.home-box-4 h3 {
+.home-box-5 h3 {
     text-align: left;
     color: white;
     font-size: 1em;
@@ -570,32 +579,32 @@ Préfix: home-
 	width: 100%;
 }
 
-.home-box-4 p {
+.home-box-5 p {
 	color: white!important;
 }
 
-.home-box-6 h3{
+.home-box-7 h3{
 	padding: 8px 0px 8px 0px;
 }
 
-.home-box-5, .home-box-6 {
+.home-box-6, .home-box-7 {
     height: 400px;
     background: white;
     margin-top: 75px;
 	margin-bottom: 50px;
 }
 
-.home-box-5{
+.home-box-6{
 	border-right: 3px solid #6ad07c;
 	border-bottom: 3px solid #6ad07c;
 }
 
-.home-box-5 p{
+.home-box-6 p{
 	font-size: 1.15em;
 	margin: 5px;
 }
 
-.home-box-5 h4{
+.home-box-6 h4{
 	text-align: center;
 	font-size: 1.3em;
 	font-weight: 700;
@@ -603,7 +612,7 @@ Préfix: home-
 	margin-bottom: 20px;
 }
 
-.home-box-5 a{
+.home-box-6 a{
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -615,7 +624,7 @@ Préfix: home-
     width: 100%;
 }
 
-.home-box-6 {
+.home-box-7 {
     background-color: transparent;
     position: relative;
 	overflow: hidden;
@@ -629,7 +638,7 @@ Préfix: home-
 	font-family: sans-serif;
 }
 
-.home-box-6 h4 {
+.home-box-7 h4 {
     text-align: center;
     padding: 105px 20px;
 	color: white;
@@ -637,7 +646,7 @@ Préfix: home-
 	font-weight: 800;
 }
 
-.home-box-6 h5 {
+.home-box-7 h5 {
     text-align: center;
 	color: white;
 	font-size: 1.2em;

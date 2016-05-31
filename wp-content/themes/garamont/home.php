@@ -12,43 +12,19 @@
 <div class="home-page">
 
 
-    <?php $query = new WP_Query(array('page_id' => 2, 'posts_per_page' => '1')); ?>
+    <?php $query = new WP_Query(array('page_id' => 8, 'posts_per_page' => '1')); ?>
 	
     <?php while ($query->have_posts()) : $query->the_post(); ?>
-
-
-		<div style="margin:auto; margin-bottom:75px; margin-top: 50px; width:80%; height:500px; position: relative;">
-
-			<svg fill="white" style="position: absolute" height="100%" width="100%" viewBox="0 0 250 100" preserveAspectRatio="none">
-				<path class="path-grand" d="M0 0 L0 100 L100 100 L100 96 L4 96 L4 4 L100 4 L100 0 L0 0 Z" />
-				<path class="path-grand" d="M150 0 L250 0 L250 100 L150 100 L150 96 L246 96 L246 4 L150 4 L150 0 Z" />
-
-				<path class="path-moyen" d="M0 0 L0 100 L100 100 L100 96 L4 96 L4 4 L100 4 L100 0 L0 0 Z" />
-				<path class="path-moyen" d="M150 0 L250 0 L250 100 L150 100 L150 96 L246 96 L246 4 L150 4 L150 0 Z" />
-
-				<path class="path-petit" d="M0 0 L0 100 L100 100 L100 96 L4 96 L4 4 L100 4 L100 0 L0 0 Z" />
-				<path class="path-petit" d="M150 0 L250 0 L250 100 L150 100 L150 96 L246 96 L246 4 L150 4 L150 0 Z" />
-				Sorry, your browser does not support inline SVG.
-			</svg>
-
-			<div style="position: absolute; top: 7%; width:100%">
-				<h1><?php the_title() ?></h1>
-
-
-
-					<div class="home-content"><?php echo the_content(); ?></div>
-
-			</div>
+		<div class="home-titre" style="background-image: url('<?php the_field(image); ?>');">
+				<h1><?php the_field(titre); ?></h1>
+				<div class="home-content"><?php echo the_content(); ?></div>
 		</div>
-
-        
-
 
         <div class="row">
 
-            <?php for($i=1; $i<6; $i++){?>
+            <?php for($i=1; $i<7; $i++){?>
 				
-				<?php if ($i == 4 || $i == 5 ) {?>
+				<?php if ($i == 5 || $i == 6 ) {?>
 					<div class="row"></div>
 				<?php } ?>
 			
@@ -56,16 +32,25 @@
 				<?php $img = 'image_'.$i; ?>
                 <?php $content = 'descritpion_'.$i; ?>
 
-                <div class="<?php if($i == 1 || $i == 2 || $i == 3) { ?>col-md-offset-1 home-box <?php if ($i == 1) { ?>col-md-4  bounceInLeft  wow<?php }else if ($i == 3) { ?>col-md-2  bounceInRight  wow <?php }else if ($i == 2){ ?>col-md-2  bounceInUp  wow  <?php }}else if ($i == 4) { ?>col-md-2<?php }else if ($i == 5) { ?>col-md-5 col-md-offset-1  bounceInLeft  wow<?php } ?> home-box-<?php echo $i; ?>">
+                <div class="<?php if($i == 1 || $i == 2 || $i == 3 || $i == 4) { ?> home-box col-md-6 <?php if ($i == 1 || $i == 2) { ?>bounceInLeft  wow<?php }else if ($i == 3 || $i == 4) { ?> bounceInRight  wow <?php }}else if ($i == 5) { ?>col-md-2<?php }else if ($i == 6) { ?>col-md-5 col-md-offset-1  bounceInLeft  wow<?php } ?> home-box-<?php echo $i; ?>">
 
 
-
-                    <h3><?php the_field($title) ?></h3>
-					<img src="<?php the_field($img)?>" alt="<?php echo $titre?>"/>
-					<p><?php the_field($content) ?></p>
-
-
-				<?php if ($i == 5) {?>
+					<?php if($i == 1 || $i == 2 || $i == 3 || $i == 4) { ?>
+						<div class="col-md-8">
+							<h3><?php the_field($title) ?></h3>
+							<p><?php the_field($content) ?></p>
+						</div>
+						<div class="col-md-2">
+							<img src="<?php the_field($img)?>" alt="<?php echo $titre?>"/>
+						</div>
+						
+					<?php } else { ?>
+						<h3><?php the_field($title) ?></h3>
+						<img src="<?php the_field($img)?>" alt="<?php echo $titre?>"/>
+						<p><?php the_field($content) ?></p>
+					<?php } ?>
+					
+				<?php if ($i == 6) {?>
 					<?php $argss = array( 'numberposts' => 1 );
 						$recent_posts = wp_get_recent_posts( $argss );
 						foreach( $recent_posts as $recent ){
@@ -82,7 +67,7 @@
                 </div>
 
 			
-				<?php if ($i == 4) {?>
+				<?php if ($i == 5) {?>
 
 					<?php $query2 = new WP_Query(array('post_type' => 'creation', 'orderby' => 'rand')); ?>
 			
@@ -105,8 +90,8 @@
 			
 			
             <?php } ?>
-					<div class="col-md-5 home-box-6  bounceInRight  wow">
-					<h3 class="home-citation"><?php the_field(titre_6) ?></h3>
+					<div class="col-md-5 home-box-7 bounceInRight  wow">
+					<h3 class="home-citation"><?php the_field(titre_7) ?></h3>
 					 <?php query_posts('orderby=rand&showposts=1&post_type=temoignage'); ?>
 					  <?php while (have_posts()): the_post(); ?>
 						<div class="home-citation-fond" style="background-image: url('<?php the_field(image_citation); ?>'); background-position: center center; background-repeat: no-repeat;">
